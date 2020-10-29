@@ -1,0 +1,6 @@
+1. for loop works only for 1 variable.
+2. for loop only works with a paticular syntax: <itteration_variable>,<initialization_value>,<termination_condition>,<increament_value>
+code: for <itteration_variable> in range(<initialization_value>,<termination_condition>,<increament_value>):
+3. Loops always need to be connected to their scope first. What ever thier 1st edge is pointing to is considered as their scope.
+4. Cannot put any commas or special characters while using "print" and "input" keywords.
+5. Never use "input" keyword when planning to use the "Execute feature"

@@ -22,36 +22,36 @@ This project uses the same underlying concepts used in the &#39;Flow2Code&#39; b
 
 1. Installing python 3.6.9
 
-- wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-- tar -xvf Python-3.6.9.tgz
-- cd Python-3.6.9
-- ./configure
-- make
-- make altinstall
+    - wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
+    - tar -xvf Python-3.6.9.tgz
+    - cd Python-3.6.9
+    - ./configure
+    - make
+    - make altinstall
 
 2. Create virtual environment
 
-- python3.6 -m venv env\_FCP
+    - python3.6 -m venv env\_FCP
 
 3. Activate environment and install dependencies:
 
-- source env\_FCP/bin/activate
-- pip install -r requirements.txt(.../drag-drop-gui/ABFL Branding/requirements.txt)
+    - source env\_FCP/bin/activate
+    - pip install -r requirements.txt(.../drag-drop-gui/ABFL Branding/requirements.txt)
 
 4. Launching app
 
-- cd &#39;ABFL Branding/BackEnd&#39;
-- python routes\_main.py ( by default the app will launch on port 8013 )
+    - cd &#39;ABFL Branding/BackEnd&#39;
+    - python routes\_main.py ( by default the app will launch on port 8013 )
 
 5. Endpoints
 
-- use /flow2code endpoint for Flowchart to Python3 converter.
+    - use /flow2code endpoint for Flowchart to Python3 converter.
 
-Ex: localhost:8013/flow2code
+    Ex: localhost:8013/flow2code
 
-- use /smartflow endpoint for Smart FCP.
+    - use /smartflow endpoint for Smart FCP.
 
-Ex: localhost:8013/smartflow
+    Ex: localhost:8013/smartflow
 
 **# Directory Structure**
 
@@ -59,27 +59,27 @@ Inside &#39;ABFL Branding/Backend&#39;:
 
 - AI Models:
 
-- finalized\_model.sav: This model is used to classify the instructions into functions.
+  - finalized\_model.sav: This model is used to classify the instructions into functions.
 
-Ex: If the input is &quot;add all elements in the column points&quot; will be classified as &quot;sum&quot;
+  Ex: If the input is &quot;add all elements in the column points&quot; will be classified as &quot;sum&quot;
 
-- glove.6B.50d.txt: Is the Stanford generated word embeddings.
+  - glove.6B.50d.txt: Is the Stanford generated word embeddings.
 
 - admin\_api.py: helper file for routes\_main.py, contains different classes that lead to different results.
-- py: This is a helper file for SmartFlow.py this has all the preprocessing and prediction methods required for the NLP classification.
-- py: This module is used to convert json received from the front end to graph data.
-- py: This module is used to convert the graph data to python3 code. This is the module being used when you are accessing the &#39;/flow2code&#39; endpoint.
+- AIUtil.py: This is a helper file for SmartFlow.py this has all the preprocessing and prediction methods required for the NLP classification.
+- conv.py: This module is used to convert json received from the front end to graph data.
+- FlowData2Code.py: This module is used to convert the graph data to python3 code. This is the module being used when you are accessing the &#39;/flow2code&#39; endpoint.
 - routes\_main.py: This is the main module. This module defines all the endpoints for the API.
-- py: used to define the port number of the application
-- py: This module is used to parse various gsuit elements using NLP. This is the module being used when you are accessing the &#39;/smartflow&#39; endpoint.
-- py: It is a helper module for the FlowData2Code.py and SmartFlow.py module.
+- settings.py: used to define the port number of the application
+- SmartFlow.py: This module is used to parse various gsuit elements using NLP. This is the module being used when you are accessing the &#39;/smartflow&#39; endpoint.
+- tokenizer.py: It is a helper module for the FlowData2Code.py and SmartFlow.py module.
 
 Inside &#39;ABFL Branding/Frontend&#39;:
 
-- mxgraph: This directory contains many example projects for the mxgraph library. ( a JS library used for the frontend of the project )
-- static: this directory contains all the static files that can be accessed using the API
-- html: This is the page that is loaded up when the user accesses the &#39;/flow2code&#39; endpoint.
-- html: This is the page that is loaded up when the user accesses the &#39;/smartflow&#39; endpoint.
+  - mxgraph: This directory contains many example projects for the mxgraph library. ( a JS library used for the frontend of the project )
+  - static: this directory contains all the static files that can be accessed using the API
+  - IndexFlow2Code.html: This is the page that is loaded up when the user accesses the &#39;/flow2code&#39; endpoint.
+  - IndexSmartFlow.html: This is the page that is loaded up when the user accesses the &#39;/smartflow&#39; endpoint.
 
 All generated files are generated in the &#39;ABFL Branding&#39; directory.
 
@@ -108,7 +108,7 @@ https://drive.google.com/file/d/1eWn0ImHzg3WMKHdovcuTpKhh1YxQYigG/view?usp=shari
 
 2. Create virtual environment inside the &#39;Training Model&#39; dir
 
-- 8 -m venv env\_Train
+- python3.8 -m venv env\_Train
 
 3. Activate environment and install dependencies:
 

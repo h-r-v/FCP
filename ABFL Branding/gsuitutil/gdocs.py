@@ -33,7 +33,7 @@ def gdocs(ID, onlybody=True):
         with open('gsuitutil/tokendocs.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
-    service = build('docs', 'v1', credentials=creds)
+    service = build('docs', 'v1', credentials=creds, cache_discovery=False)
 
     # Retrieve the documents contents from the Docs service.
     document = service.documents().get(documentId=DOCUMENT_ID).execute()

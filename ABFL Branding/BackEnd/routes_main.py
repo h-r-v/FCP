@@ -15,9 +15,12 @@ if __name__ == "__main__":
     
     app = tornado.web.Application(
     [
-        (r'/flowchartgeneration', HomeHandler),
+        (r'/flow2code', flow2code),
+        (r'/smartflow', smartFlow),
         (r'/getcode', PyCodeGenerator),
+        (r'/getsmartpreview', getSmartPreview),
         (r'/execcode', execHandler),
+        (r'/smartexec', smartExec),
         (r"/static/(.*)", tornado.web.StaticFileHandler, {"path": os.path.join(__file__, 'static')}),
         (r"/(.*)", tornado.web.StaticFileHandler, {"path": os.path.join(__file__, 'static/')}),
     ],

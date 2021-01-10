@@ -6,6 +6,7 @@ import json
 import sys
 from conv import *
 from FlowData2Code import *
+from SmartFlow import *
 import subprocess
 import os
 
@@ -26,11 +27,40 @@ class PyCodeGenerator(tornado.web.RequestHandler):
             code = f.read()
         self.write(code)
 
+# from common import CustomStaticFileHandler
+class getSmartPreview(tornado.web.RequestHandler):
+    def post(self):
+        myKey = self.get_argument("myKey", default="", strip=False)
+        # create_graph is in conv.py
+        graph = create_graph(json.loads(myKey))
+        # create_code is in FlowData2Code.py
+        smart_preview(graph)
+        code = ''
+        with open('generated_smart_preview.txt') as f:
+            code = f.read()
+        self.write(code)
+
+# from common import CustomStaticFileHandler
+class smartExec(tornado.web.RequestHandler):
+    def post(self):
+        myKey = self.get_argument("myKey", default="", strip=False)
+        # create_graph is in conv.py
+        graph = create_graph(json.loads(myKey))
+        # create_code is in FlowData2Code.py
+        smart_exec(graph)
+        code = ''
+        with open('generated_smart_output.txt') as f:
+            code = f.read()
+        self.write(code)
         
 
-class HomeHandler(tornado.web.RequestHandler):
+class flow2code(tornado.web.RequestHandler):
     def get(self):
-        self.render("Index.html",error=None)
+        self.render("IndexFlow2Code.html",error=None)
+
+class smartFlow(tornado.web.RequestHandler):
+    def get(self):
+        self.render("IndexSmartFlow.html",error=None)
 
 class execHandler(tornado.web.RequestHandler):
     def post(self):

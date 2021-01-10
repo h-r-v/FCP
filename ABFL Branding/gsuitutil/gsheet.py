@@ -35,7 +35,7 @@ def gsheet(ID,RANGE):
         with open('gsuitutil/token.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
-    service = build('sheets', 'v4', credentials=creds)
+    service = build('sheets', 'v4', credentials=creds, cache_discovery=False)
 
     # Call the Sheets API
     sheet = service.spreadsheets()

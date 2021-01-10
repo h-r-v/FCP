@@ -1,0 +1,123 @@
+ELLIPSE: This type of box is used for indicating the start or stop of the main code block/start or stop of the sub routine code blocks. <br>
+- Use the "start" keyword only for the 1st node of the main function.<br>
+- Use the  "sub" keyword for subroutines.<br>
+    Format:<br>
+    sub &ltname_of_the_function&gt &ltname_of_variable1&gt &ltname_of_variable2&gt ....<br>
+    Ex:<br>
+    "sub add a b" will result in:<br>
+        def add(a,b,):<br>
+- Use "stop" keyword for stop nodes<br>
+<br>
+RECTANGLE: This type of box is used for taking inputs into variables/ printing variables or statements/ or for any basic process, like addition, substraction, assigning values to variables, etc.<br>
+- Use the  "input" keyword for taking input.<br>
+    Format:<br>
+    input &ltvariable_name&gt(&ltvariable_type&gt) &ltvariable_name&gt(&ltvariable_type&gt) ...<br>
+    Ex:<br>
+    "input a(int) name(str) address" will result in:<br>
+        a = int(input())<br>
+        name = str(input())<br>
+        address = input()<br>
+- Use the "print" keyword for printing anything.<br>
+    Format:<br>
+    print &ltvarable_name/string&gt &ltvarable_name/string&gt ...<br>
+    Ex:<br>
+    "print "Harsh" "Raj" "Verma" a b" will result in:<br>
+        print("Harsh", "Raj", "Verma", a, b,)<br>
+- If none of the keywords are used then whatever you write in a rectangle is directly copied in the code.<br>
+    Format:<br>
+    &ltanything&gt<br>
+    Ex:<br>
+    "i+=1" will result in:<br>
+        i+=1<br>
+    "import matplotlib.pyplot as plt" will result in:<br>
+        import matplotlib.pyplot as plt<br>
+<br>
+RHOMBUS: This type of box is used for if statements and loops. These box can be considered as "decision" box.<br>
+<br>
+MAKE SURE YOU ALWAYS CONNECT THE EDGES IN SEQUENTIAL ORDER. ( you should always connect the unlabeled edge at the last and your 1st connection should always be to your scope )<br>
+<br>
+  IF STATEMENTS<br>
+    - Any rhombus with only 1 incoming edge is treated as an if statement.<br>
+    - The LHS part of the statement is expected to be in the rhombus and the RHS part is expected to be on the label.<br>
+    Format:<br>
+    Inside rhombus: &ltstatement1&gt with an outgoing edge labeled as &ltstatement2&gt<br>
+    Ex1:<br>
+    Text inside rhombus "number%2" with an outgoing edge labeled as "True"(without quotes)(or "yes"(without quotes) ) will result in:<br>
+        if (number%2)==(True):<br>
+    Ex2:<br>
+    Text inside rhombus "name" with an outgoing edge labeled as "Harsh" will result in:<br>
+        if (name)==("Harsh"):<br>
+    Ex3:<br>
+    Text inside rhombus "name" with 3 outgoing edges labeled as "Harsh", ”Samriddhi”, “else”(without quotes) will result in:<br>
+    if (name)==("Harsh"):<br>
+	&ltinside_scope&gt<br>
+    elif (name)==(“Samriddhi”):<br>
+	&ltinside_scope&gt<br>
+    else:<br>
+	&ltinside_scope&gt<br>
+    NOTE:<br>
+    - Only the first outgoing edge is evaluated to a if statement all other are evaluated as elif statements ( any outgoing edge labeled as "else"(without quotes) is evaluated as an else statement )<br>
+    - Any unlabeled outgoing edges are treated as leaving the scope of if/elif/else.<br>
+<br>
+  LOOPS<br>
+    - Any rhombus with more than 1 incoming edge is treated as a loop statement.<br>
+    FOR LOOP<br>
+    Format:<br>
+    &ltvariable_name&gt,&ltinitialization_condition&gt,&ltstoping_condition&gt,&ltincreamnt&gt is the format for for loops<br>
+    Ex:<br>
+    i,0,10,1 will result in:<br>
+    	for i in range(0,10,1):<br>
+    WHILE LOOP<br>
+    - Any condition not the the for loop format written inside the rhombus will be treated as the condition for.   <br>
+    Format:<br>
+    &ltcondition&gt<br>
+    Ex:<br>
+    i&gt=5 will result in:<br>
+    	while i&gt=5:<br>
+    	<br>
+SWIMLANE: This type of box is used for accessing predefiend functions to save the users some time.<br>
+- You can use various functionalities for the flowchart parser using this shape.<br>
+<br>
+  GoogleSheet <br>
+  -You can access data in a paticular GSHEET using the following syntax:<br>
+    Fromat:<br>
+    GSHEET &ltsheet_id&gt &ltrange&gt &ltvariable_name_where_the_retrived_data_will_be_stored&gt<br>
+    Ex:<br>
+    GSHEET "1OkYqidqH5vtBcx6MfQ2GUjMC-WeGJoaucPxM7_8v5kI" "A2:C5" data<br>
+    will result in getting cells A2 to C5 from https://docs.google.com/spreadsheets/d/1OkYqidqH5vtBcx6MfQ2GUjMC-WeGJoaucPxM7_8v5kI/edit#gid=0 and storing it in a variable called data. <br>
+  <br>
+  GoogleDocs<br>
+  -You can access data in a paticular GDOCS using the following syntax:<br>
+    Fromat1:<br>
+    GDOCS &ltdoc_id&gt &ltvariable_name_where_the_retrived_data_will_be_stored&gt<br>
+    Ex:<br>
+    GDOCS "1oSL2p7b_K_DMBw5nrFeGTrb96EWQdp8Sc3nrBV9Lits" msg<br>
+    will result in getting the title and body's text from https://docs.google.com/document/d/1oSL2p7b_K_DMBw5nrFeGTrb96EWQdp8Sc3nrBV9Lits/edit?usp=sharing and storing it in the variable msg.<br>
+    Fromat2:<br>
+    GDOCS &ltdoc_id&gt &ltfull_content_flag&gt &ltvariable_name_where_the_retrived_data_will_be_stored&gt<br>
+    Ex:<br>
+    GDOCS "1oSL2p7b_K_DMBw5nrFeGTrb96EWQdp8Sc3nrBV9Lits" False msg<br>
+    will result in getting the a dictionary discribing the style and all other attributes of the body from https://docs.google.com/document/d/1oSL2p7b_K_DMBw5nrFeGTrb96EWQdp8Sc3nrBV9Lits/edit?usp=sharing and saving into a variable named msg<br>
+    <br>
+  Mail<br>
+  - You can use the MAIL keyword to send a mail to any recipent you want.<br>
+    Format:<br>
+    MAIL &ltreciver_email&gt &ltsubject&gt &ltbody&gt<br>
+    Ex:<br>
+    MAIL "harshr.v.499@gmail.com" "This is the subject" "This is the body"<br>
+    will result in a mail to harshr.v.499@gmail.com with subject "This is the subject"(without quotes) and body "This is the body"(without quotes)<br>
+    <br>
+<br>
+- Anything that is not in the above format in this box will be directly copied to the generated file.<br>
+  Format:<br>
+  &ltanything&gt<br>
+  Ex:<br>
+  sum( 2, 3) will result in:<br>
+  	sum( 2, 3)<br>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

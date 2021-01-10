@@ -1,4 +1,4 @@
-ELLIPSE:
+ELLIPSE: This type of box is used for indicating the start or stop of the main code block/start or stop of the sub routine code blocks. 
 - Use the "start" keyword only for the 1st node of the main function.
 - Use the  "sub" keyword for subroutines.
     Format:
@@ -8,13 +8,7 @@ ELLIPSE:
         def add(a,b,):
 - Use "stop" keyword for stop nodes
 
-RECTANGLE:
-- Use the "print" keyword for printing anything.
-    Format:
-    print <varable_name/string> <varable_name/string> ...
-    Ex:
-    "print "Harsh" "Raj" “Verma” a b" will result in:
-        print("Harsh", "Raj", “Verma”, a, b,)
+RECTANGLE: This type of box is used for taking inputs into variables/ printing variables or statements/ or for any basic process, like addition, substraction, assigning values to variables, etc.
 - Use the  "input" keyword for taking input.
     Format:
     input <variable_name>(<variable_type>) <variable_name>(<variable_type>) ...
@@ -23,6 +17,12 @@ RECTANGLE:
         a = int(input())
         name = str(input())
         address = input()
+- Use the "print" keyword for printing anything.
+    Format:
+    print <varable_name/string> <varable_name/string> ...
+    Ex:
+    "print "Harsh" "Raj" “Verma” a b" will result in:
+        print("Harsh", "Raj", “Verma”, a, b,)
 - If none of the keywords are used then whatever you write in a rectangle is directly copied in the code.
     Format:
     <anything>
@@ -32,7 +32,7 @@ RECTANGLE:
     "import matplotlib.pyplot as plt" will result in:
         import matplotlib.pyplot as plt
 
-RHOMBUS:
+RHOMBUS: This type of box is used for if statements and loops. These box can be considered as "decision" box.
 
 MAKE SURE YOU ALWAYS CONNECT THE EDGES IN SEQUENTIAL ORDER. ( you should always connect the unlabeled edge at the last and your 1st connection should always be to your scope )
 
@@ -42,13 +42,13 @@ MAKE SURE YOU ALWAYS CONNECT THE EDGES IN SEQUENTIAL ORDER. ( you should always 
     Format:
     Inside rhombus: <statement1> with an outgoing edge labeled as <statement2>
     Ex1:
-    Text in side rhombus "number%2" with an outgoing edge labeled as "True"(without quotes)(or "yes"(without quotes) ) will result in:
+    Text inside rhombus "number%2" with an outgoing edge labeled as "True"(without quotes)(or "yes"(without quotes) ) will result in:
         if (number%2)==(True):
     Ex2:
-    Text in side rhombus "name" with an outgoing edge labeled as ""Harsh"" will result in:
+    Text inside rhombus "name" with an outgoing edge labeled as "Harsh" will result in:
         if (name)==("Harsh"):
     Ex3:
-    Text in side rhombus "name" with 3 outgoing edges labeled as ""Harsh"", “”Samriddhi””, “else” will result in:
+    Text inside rhombus "name" with 3 outgoing edges labeled as "Harsh", ”Samriddhi”, “else”(without quotes) will result in:
     if (name)==("Harsh"):
 	<inside_scope>
     elif (name)==(“Samriddhi”):
@@ -75,7 +75,7 @@ MAKE SURE YOU ALWAYS CONNECT THE EDGES IN SEQUENTIAL ORDER. ( you should always 
     i>=5 will result in:
     	while i>=5:
     	
-SWIMLANE
+SWIMLANE: This type of box is used for accessing predefiend functions to save the users some time.
 - You can use various functionalities for the flowchart parser using this shape.
 
   GoogleSheet 

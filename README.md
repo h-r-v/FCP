@@ -14,7 +14,7 @@ This project contains two versions of the &#39;Flow Chart Parser&#39;:
 
 This project uses Graph theory to represent a flowchart in a computer&#39;s memory. Then by using various algorithms the flowchart is converted to Python3 code. The code generated can be executed on the server or can be downloaded to be executed locally.
 
-1. SmartFlow
+2. SmartFlow
 
 This project uses the same underlying concepts used in the &#39;Flow2Code&#39; but adds a layer of NLP on top of it to make the tool more intuitive to use.
 

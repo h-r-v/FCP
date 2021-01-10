@@ -29,21 +29,21 @@ This project uses the same underlying concepts used in the &#39;Flow2Code&#39; b
 - make
 - make altinstall
 
-1. Create virtual environment
+2. Create virtual environment
 
-- 6 -m venv env\_FCP
+- python3.6 -m venv env\_FCP
 
-1. Activate environment and install dependencies:
+3. Activate environment and install dependencies:
 
 - source env\_FCP/bin/activate
 - pip install -r requirements.txt(.../drag-drop-gui/ABFL Branding/requirements.txt)
 
-1. Launching app
+4. Launching app
 
 - cd &#39;ABFL Branding/BackEnd&#39;
 - python routes\_main.py ( by default the app will launch on port 8013 )
 
-1. Endpoints
+5. Endpoints
 
 - use /flow2code endpoint for Flowchart to Python3 converter.
 
@@ -106,22 +106,22 @@ https://drive.google.com/file/d/1eWn0ImHzg3WMKHdovcuTpKhh1YxQYigG/view?usp=shari
 - make
 - make altinstall
 
-1. Create virtual environment inside the &#39;Training Model&#39; dir
+2. Create virtual environment inside the &#39;Training Model&#39; dir
 
 - 8 -m venv env\_Train
 
-1. Activate environment and install dependencies:
+3. Activate environment and install dependencies:
 
 - source env\_Train/bin/activate
 - pip install -r requirements.txt (.../drag-drop-gui/Training Model/requirements.txt)
 
-1. Put all the training data into the .../Training Model/classes
+4. Put all the training data into the .../Training Model/classes
 
 - With file name as the label and the content of the file as the data points
 
-1. Launch the &#39;training.ipynb&#39; by writing the command jupyter-notebook &#39;training.ipynb&#39; and launching the whole notebook sequentially.
+5. Launch the &#39;training.ipynb&#39; by writing the command jupyter-notebook &#39;training.ipynb&#39; and launching the whole notebook sequentially.
 
-1. The model is saved in the &#39;../Training Model/models&#39;.
+6. The model is saved in the &#39;../Training Model/models&#39;.
 
 **# Demo Video for FCP**
 

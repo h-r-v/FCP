@@ -99,25 +99,25 @@ https://drive.google.com/file/d/1eWn0ImHzg3WMKHdovcuTpKhh1YxQYigG/view?usp=shari
 
 1. Installing python 3.8.5
 
-- wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
-- tar -xvf Python-3.8.5.tgz
-- cd Python-3.8.5
-- ./configure
-- make
-- make altinstall
+    - wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+    - tar -xvf Python-3.8.5.tgz
+    - cd Python-3.8.5
+    - ./configure
+    - make
+    - make altinstall
 
 2. Create virtual environment inside the &#39;Training Model&#39; dir
 
-- python3.8 -m venv env\_Train
+    - python3.8 -m venv env\_Train
 
 3. Activate environment and install dependencies:
 
-- source env\_Train/bin/activate
-- pip install -r requirements.txt (.../drag-drop-gui/Training Model/requirements.txt)
+    - source env\_Train/bin/activate
+    - pip install -r requirements.txt (.../drag-drop-gui/Training Model/requirements.txt)
 
 4. Put all the training data into the .../Training Model/classes
 
-- With file name as the label and the content of the file as the data points
+    - With file name as the label and the content of the file as the data points
 
 5. Launch the &#39;training.ipynb&#39; by writing the command jupyter-notebook &#39;training.ipynb&#39; and launching the whole notebook sequentially.
 
